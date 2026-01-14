@@ -10,16 +10,16 @@
 
         public override double CalculateArea()
         {
-            return Math.PI * Math.Pow(Radius, 2);
+            return Math.Round(Math.PI * Math.Pow(Radius, 2), 2);
         }
 
         public override double CalculatePerimeter()
         {
-            return 2 * Math.PI * Radius;
+            return Math.Round(2 * Math.PI * Radius, 2);
         }
         public override void GetInfo()
         {
-            Console.WriteLine($"Shape: Circle\nArea: {CalculateArea()}\nPerimeter: {CalculatePerimeter()}");
+            Console.WriteLine($"Shape: Circle\nArea: {CalculateArea()} cm2\nPerimeter: {CalculatePerimeter()} cm");
         }
     }
 }
