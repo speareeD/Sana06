@@ -12,5 +12,19 @@
             SecondSideLength = secondSideLength;
             ThirdSideLength = thirdSideLength;
         }
+        public override double CalculateArea()
+        {
+            double semiPerimeter = CalculatePerimeter() / 2;
+            return Math.Round(Math.Sqrt(semiPerimeter * (semiPerimeter - FirstSideLength) * (semiPerimeter - SecondSideLength) *
+                (semiPerimeter - ThirdSideLength)), 2);
+        }
+        public override double CalculatePerimeter()
+        {
+            return FirstSideLength + SecondSideLength + FirstSideLength;
+        }
+        public override void GetInfo()
+        {
+            Console.WriteLine($"Shape: Triangle\nArea: {CalculateArea()} cm2\nPerimeter: {CalculatePerimeter()} cm\n");
+        }
     }
 }
