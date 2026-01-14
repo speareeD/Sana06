@@ -20,7 +20,7 @@
         }
         public override void GetInfo()
         {
-            Console.WriteLine($"Shape: Rectangle\nArea: {CalculateArea()} cm2\nPerimeter: {CalculatePerimeter()} cm");
+            Console.WriteLine($"Shape: Rectangle\nArea: {CalculateArea()} cm2\nPerimeter: {CalculatePerimeter()} cm\n");
         }
     }
 }
