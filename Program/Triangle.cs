@@ -1,4 +1,6 @@
-﻿namespace Program
+﻿using System.Security.AccessControl;
+
+namespace Program
 {
     public class Triangle : Shape
     {
@@ -8,9 +10,17 @@
 
         public Triangle(double firstSideLength, double secondSideLength, double thirdSideLength)
         {
-            FirstSideLength = firstSideLength;
-            SecondSideLength = secondSideLength;
-            ThirdSideLength = thirdSideLength;
+            if (firstSideLength + secondSideLength < thirdSideLength || firstSideLength + thirdSideLength < secondSideLength
+                || secondSideLength + thirdSideLength < firstSideLength)
+            {
+                throw new Exception("Triangle with such sides' length is impossible");
+            }
+            else
+            {
+                FirstSideLength = firstSideLength;
+                SecondSideLength = secondSideLength;
+                ThirdSideLength = thirdSideLength;
+            }
         }
         public override double CalculateArea()
         {
