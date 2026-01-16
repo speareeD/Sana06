@@ -5,7 +5,14 @@
         protected double Radius;
         public Circle(double radius)
         {
-            Radius = radius;
+            if (radius < 1)
+            {
+                throw new Exception("Radius cannot be less than 1");
+            }
+            else
+            {
+                Radius = radius;
+            }
         }
 
         public override double CalculateArea()
