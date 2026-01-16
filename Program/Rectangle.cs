@@ -7,8 +7,22 @@
 
         public Rectangle(double length, double width)
         {
-            Length = length;
-            Width = width;
+            if (length < 1)
+            {
+                throw new Exception("Length cannot be less than 1");
+            }
+            else
+            {
+                Length = length;
+            }
+            if (width < 1)
+            {
+                throw new Exception("Width cannot be less than 1");
+            }
+            else
+            {
+                Width = width;
+            }
         }
         public override double CalculateArea()
         {
